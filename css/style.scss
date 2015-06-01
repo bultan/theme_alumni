@@ -1,0 +1,775 @@
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+@import "import/reset"; 
+@import "import/mixins";
+@import "import/fonts"; 
+@import "import/typography"; 
+@import "import/elements"; 
+@import "import/forms"; 
+@import "import/wordpress"; 
+@import "import/tabbed-content";
+
+body {
+	background: #fff;
+}
+
+.custom-content {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.content-area {
+	@include breakpoint(min-width 760px) {
+		float: left;
+		width: 100%;
+		margin-left: -232px;
+		padding-left: 232px;
+	}
+}
+
+.error404 .content-area {
+	margin: 0;
+	padding: 0;
+}
+
+.site-main {
+	@include clearfix();
+	padding: 0 20px 20px 0;
+	@include breakpoint(max-width 760px) {
+		padding: 0 10px;
+	}
+	article {
+		@include clearfix();
+	}
+}
+
+.single .site-main {
+	padding: 0;
+	width: 90%;
+	margin: 12px 0 0 0;
+	float: left;
+	position: relative;
+	@include breakpoint(max-width 1050px) {
+		width: 100%;
+	}
+	@include breakpoint(max-width 760px) {
+		width: 100%;
+		float: none;
+		padding: 0 5px;
+	}
+}
+
+.single .entry-title {
+	@include font-size(26);
+	color: #e8244f;
+	font-family: $font-interstate;
+	margin-bottom: 20px;
+}
+
+.single .entry-content {
+	width: 100%;
+}
+
+.content-wrap {
+	width: 100%;
+}
+
+.site-content {
+	@extend .custom-content;
+	margin-top: 1.5em;
+}
+
+.site-content .widget-area {
+	float: right;
+	padding: 0 0 0 10px;
+	width: 232px;
+	margin: 16px 0 0 0;
+	@include breakpoint(max-width 760px) {
+		float: none;
+		width: auto;
+		margin: 1em auto 0;
+		padding: 0 10px;
+		max-width: 760px;
+	}
+}
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+.copyright {
+	float: left;
+	@include breakpoint(max-width 760px) {
+		float: none;
+	}
+}
+.ef-link {
+	float: right;
+	@include breakpoint(max-width 760px) {
+		float: none;
+	}
+	a {
+		@include font-size(14);
+		color: #fff;
+		font-family: $font-garamond;
+		font-style: italic;
+		padding: 16px 0;
+		margin: 0;
+		@include breakpoint(max-width 760px) {
+			padding: 10px 0;
+		}
+	}
+}
+
+.bp-user .widget-area {
+	display: none;
+}
+
+.bp-user .content-area {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+/*----------- Header Styles -------------*/
+
+
+.site-header {
+
+}
+
+.site-branding {
+	@extend .custom-content;
+	@include clearfix();
+	padding: 0;
+}
+
+.logo {
+	float: left;
+	margin: 26px 0 28px 0;
+}
+
+.main-navigation {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.menu-main-menu-container {
+	@extend .custom-content;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			float: left;
+			a {
+				@include font-size(13);
+				font-family: $font-interstate;
+				color: #000;
+				padding: 15px 12px;
+				text-transform: uppercase;
+				&:hover {
+					color: #e8244f;
+				}
+			}
+			&:first-child a {
+				padding-left: 0;
+			}
+			&:last-child {
+				float: right;
+				a {
+					background: #e8244f;
+					color: #fff;
+					padding: 15px 31px;
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+#wpadminbar, .loginbar {
+	position: static !important;
+	float: right;
+	width: auto;
+	min-width: 0;
+	clear: right;
+	background: #fff;
+}
+
+#wpadminbar {
+	background: #222;
+}
+
+.loginbar {
+	padding: 8px 15px;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			float: left;
+			a {
+				@include font-size(17);
+				color: #000;
+				font-family: $font-garamond;
+				font-style: italic;
+				padding: 0 8px;
+				display: block;
+				border-right: 1px solid #bbb;
+				&:hover {
+					color: #000;
+				}
+			}
+			&:last-child a {
+				border-right: none;
+			}
+		}
+	}
+}
+
+#wpadminbar a.ab-item {
+	@include font-size(14);
+	font-family: $font-interstate;
+	color: #fff;
+}
+
+#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar .ab-top-menu>li:hover>.ab-item, #wpadminbar .ab-top-menu>li>.ab-item:focus, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus{
+	background: #333336;
+	color: #bbb;
+}
+
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input {
+	background: #333336;
+}
+
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary, #wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu {
+	background: #414143;
+}
+
+#wpadminbar .quicklinks .menupop ul li a:hover,#wpadminbar .quicklinks .menupop .ab-sub-secondary>li .ab-item:focus a, #wpadminbar .quicklinks .menupop .ab-sub-secondary>li>a:hover {
+	color: #bbb !important;
+}
+
+#wpadminbar #wp-admin-bar-user-info .display-name, #wpadminbar #wp-admin-bar-user-info .username {
+	@include font-size(14);
+	font-family: $font-interstate;
+	color: #fff;
+}
+
+#wpadminbar .quicklinks ul {
+	float: left;
+}
+
+.site-description {
+	float: left;
+	clear: right;
+}
+
+
+/*------------- Widget Area --------------*/
+
+.widget {
+	background: #fff;
+	color: #000;
+	font-family: $font-interstate;
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 14px;
+	p {
+		@include font-size(12);
+	}
+}
+
+.widget-title, .search-title {
+	@include font-size(18);
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	background: #fff;
+	color: #000;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+}
+
+.vcalendar {
+	margin-left: 0;
+}
+
+.vcalendar .entry-title a {
+	@include font-size(13);
+	font-family: $font-interstate;
+	float: left;
+	width: 120px;
+	line-height: 1.9;
+	border-right: 1px solid #ddd;
+	padding-right: 13px;
+	&:hover {
+		color: #e8244f;
+	}
+}
+
+.duration {
+	float: right;
+	width: 80px;
+	text-align: right;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	right: 0;
+	text-align: right; 
+	.date-start {
+		@include font-size(16);
+		font-weight: normal;
+		color: #e8244f;
+	}
+}
+
+.tribe-events-list-widget ol li {
+	margin-bottom: 16px;
+	position: relative;
+}
+
+.tribe-events-widget-link {
+	margin: 0;
+	a {
+		color: #e8244f;
+		font-weight: normal !important;
+		font-family: $font-interstate-light;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+#buddypress {
+	.standard-form {
+		label, span.label {
+			@include font-size(16);
+			font-family: $font-interstate-light;
+			margin: 0 0 10px 0;
+			color: #e8244f;
+			font-weight: normal;
+		}
+	}
+	input[type=submit] {
+		@include border-radius(0);
+		background: #e8244f;
+		border: 1px solid #e8244f;
+		color: #fff;
+		padding: 9px 18px;
+		text-transform: uppercase;
+		box-shadow: none;
+		text-shadow: none;
+	}	
+}
+
+.search-widget {
+	margin-top: 20px;
+	aside {
+		padding: 0;
+	}
+}
+
+.activity {
+	color: #e8244f;;
+}
+
+/*-------------- Flexslider Styles ----------------- */
+
+.metaslider {
+}
+
+.metaslider .caption {
+	@include font-size(12);
+    padding: 5px 10px;
+    word-wrap: break-word;
+    font-family: $font-interstate;
+}
+
+/*--------------- index page styles -------------------*/
+
+.stories-title {
+	@include font-size(18);
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	color: #000;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 0;
+	font-family: $font-interstate;
+}
+
+.post {
+	@include clearfix();
+}
+
+.entry-title a {
+	@include font-size(20);
+	color: #333336;
+	font-family: $font-garamond;
+}
+
+.page .entry-header .entry-title {
+	@include font-size(30);
+	color: #e8244f;
+	font-family: $font-interstate;
+	margin-top: 30px;
+}
+
+.posted-date {
+	@include font-size(12);
+	color: #000;
+	font-family: $font-interstate;
+	margin: 10px 0;
+}
+
+.post-thumb {
+	float: left;
+	margin: 0 15px 0 0;
+	width: 20%;
+}
+
+.single-post-thumbnail {
+	border: 1px solid #ddd;
+	padding: 4px;
+	img {
+		display: block;
+	}
+}
+
+.entry-content {
+	@include font-size(14);
+	width: 76%;
+	margin: 0;
+	font-family: $font-interstate-light;
+	p {
+		margin: 0 0 12px 0;
+	}
+}
+
+.continue-reading {
+	float: left;
+	width: 68%;
+	a {
+		color: #000;
+		font-weight: normal !important;
+		font-family: $font-garamond;
+		font-style: italic;
+		i {
+			position: relative;
+			margin-left: 6px;
+			&:before {
+				position: absolute;
+				top: 2px;
+				color: #e8244f;
+			}
+		}
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+.site-main .paging-navigation {
+	margin: 0;
+}
+
+.paging-navigation ul {
+    margin: 0;
+}
+
+.paging-navigation li { display: inline; }
+
+a.page-numbers,
+span.page-numbers {
+     padding: .3em .7em;
+     color: #e8244f;
+}
+
+a:hover.page-numbers {
+    color: #e8244f;
+}
+
+.paging-navigation .current {
+    font-weight: bold;
+    color: #e8244f;
+}
+
+/*--------------- Inner pages styles ------------------ */
+
+.buddypress .entry-content {
+	width: 100%;
+}
+
+/*--------------- Search styles ----------------------- */
+
+.social-media-top {
+	float: right;
+	clear: right;
+	margin-top: 34px;
+	position: relative;
+}
+
+.widget-social {
+	float: right;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			float: left;
+			a {
+				@include font-size(22);
+				color: #333336;
+				margin: 0 15px 0 0;
+				&:hover {
+					color: #e8244f;
+				}
+				span {
+					text-indent: -9999px;
+					display: block;
+				}
+			}
+			&:last-child a {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.search-submit {
+	background: none;
+	border: none;
+	padding: 0;
+	border-radius: 0;
+	position: absolute;
+	top: 7px;
+	right: 26px;
+	&:before {
+		@extend %icon;
+		@include font-size(16);
+		content: "\f002";
+		position: absolute;
+	}
+}
+
+.serach-box {
+	@include font-size(12);
+	border-radius: 20px !important;
+	font-family: $font-interstate;
+	width: 225px;
+	padding: 6px 10px !important;
+	outline: none;
+	color: #ccc;
+	border: none !important;
+}
+
+/* --------------- Directory Search ----------------- */
+
+#buddypress div.dir-search {
+	margin-top: -37px;
+}
+
+#buddypress .dir-search {
+	#groups_search, #members_search {
+		@include border-radius(4px);
+		padding: 6px 10px;
+	}
+}
+
+#buddypress div#message p, #sitewide-notice p {
+	background-color: #FFEDEF;
+	border: 1px solid #e8244f;
+	color: #000;
+	font-family: $font-interstate-light;
+}
+
+#buddypress .dir-form {
+	padding-top: 30px;
+}
+
+#buddypress div.item-list-tabs {
+	clear: none;
+	ul {
+		@include clearfix();
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+#buddypress .groups {
+	clear: both;
+}
+
+#buddypress #create-group-form {
+	margin-top: 26px;
+}
+
+#buddypress div.item-list-tabs ul li {
+	margin: 0 6px -1px 0;
+}
+
+#buddypress div.item-list-tabs ul li a {
+	@include font-size(13);
+	@include border-top-right-radius(2px);
+	@include border-top-left-radius(2px);
+	border: 1px solid #ddd;
+	padding: 10px 20px;
+	font-family: $font-interstate;
+	color: #000;
+	text-transform: uppercase;
+	outline: none;
+}
+
+#buddypress div.item-list-tabs ul li.selected a {
+	border-bottom-color: #fff;
+	background: #fff;
+	color: #000;
+}
+
+#buddypress #message.info {
+	margin: 16px 0;
+}
+
+#buddypress .activity-type-tabs {
+	margin-top: 30px;
+}
+
+#buddypress a.loading:after, #buddypress button.loading:after, #buddypress ul li.loading a:after {
+	 font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: auto;
+    text-decoration: inherit;
+    speak: none;
+    display: inline-block;
+    line-height: 1;
+    content: "\f110";
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    color: #e8244f;
+    text-decoration: none;
+    margin-left: 8px;
+    padding: 0;
+    -webkit-animation: spin 2s infinite linear;
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+
+#buddypress ul.item-list li div.item-title {
+	@include font-size(19);
+	font-family: $font-interstate;
+}
+
+/* --------------- Wordpress button styles ---------- */
+
+.wp-core-ui .button-primary {
+	background: #e8244f;
+}
+
+.field-visibility-settings-notoggle, .field-visibility-settings-toggle {
+	display: none
+}
+
+#buddypress .register-section label {
+	@include font-size(14);
+	color: #000;
+}
+
+#register-page {
+	margin:25px 0 0 0;
+}
+
+.register-section {
+	h4 {
+		@include font-size(18);
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		background: #fff;
+		color: #e8244f;
+		border-bottom: 1px solid #ddd;
+		padding: 10px 0;
+	}
+}
+
+/* --------------- Comments section ---------------- */
+
+.comment-reply-title {
+	@include font-size(18);
+	color: #e8244f;
+	font-family: $font-interstate;
+	margin-bottom: 20px;
+}
+
+/* --------------- Footer Styles -------------------- */
+
+.site-footer {
+	background: #333336;
+	border-top: 4px solid #e8244f;
+	margin-top: 40px;
+}
+
+.site-info {
+	@include clearfix();
+	@extend .custom-content;
+	@include font-size(12);
+	color: #fff;
+	padding: 15px 0;
+	font-family: $font-interstate;
+}
+
+.copyright-info {
+	float: left;
+}
+
+/* ------------- Members page -------------------- */
+
+#buddypress {
+	position: relative;
+}
+
+#buddypress div#item-header div#item-header-avatar {
+	float: left;
+	width: 17%;
+}
+
+body.bp-user .entry-header, body.single-item.groups .entry-header {
+	float: right;
+	width: 79%;
+	text-align: left;
+}
+
+#buddypress div#item-nav {
+	width: 17%;
+	position: absolute;
+	left: 0;
+	top: 160px;
+}
+
+#buddypress div#item-body {
+	float: right;
+	width: 79%;
+	min-height: 600px;
+}
+
+#buddypress div#item-nav .item-list-tabs ul {
+	border: none;
+}
+
+#buddypress div#item-nav .item-list-tabs ul li a {
+	border: none;
+}
+
+#buddypress div#item-nav .item-list-tabs ul li.selected a, #buddypress div#item-nav .item-list-tabs ul li.current a {
+	border: none;
+}
+
+#latest-update {
+	display: none;
+}
+
+.page .bp_members .entry-header .entry-title {
+	margin-top: 0;
+	font-family: $font-interstate;
+	color: #000;
+}

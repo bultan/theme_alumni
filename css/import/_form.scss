@@ -1,0 +1,438 @@
+/* All Edits For Form Should be done here */
+
+
+.form-container{
+  width:300px; 
+  margin:0 auto;
+  color:#000000;
+  font-size:14px;
+  font-family: Georgia, serif; 
+  padding:30px 25px;
+  border:1px solid #000;
+}
+
+.form-title h1{
+  color:#000000;
+  font-size: 24px;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin:0;
+  text-transform: uppercase; 
+  font-style: normal;
+  padding: 0 0 25px;
+  position:relative;
+  &:before{
+    content:"";
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:35px;
+    height:1px;
+    background:#000;
+  }
+}
+
+fieldset{
+  border:0;
+  margin:0;
+  padding:0;
+}
+
+.radioWrapper{
+  padding:22px 0 18px;
+  position: relative;
+   &:before{
+    content:"";
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:35px;
+    height:1px;
+    background:#000;
+  }
+  .radio-wrapper-title{
+    color:#000000;
+    font-size: 14px;
+    font-style: italic; 
+    padding:0 0 6px;
+  }
+  input[type="radio"] {
+   position:absolute;
+   opacity: 0;
+   -moz-opacity: 0;
+   -webkit-opacity: 0;
+   -o-opacity: 0;
+  }
+  input[type="radio"] + label {
+     position:relative;
+     padding: 0 0 0 31px;
+     font-size: 14px;
+     line-height:30px;
+     color:#000000;
+     font-family: Arial, Helvetica, sans-serif;
+  }
+  input[type="radio"] + label:before {
+     content:"";
+     display:block;
+     position:absolute;
+     top:-4px;
+     height: 21px;
+     width: 21px;
+     background: white;
+     border: 1px solid #a2988a;
+     box-shadow: inset 0px 0px 0px 4px white;     
+     border-radius: 50%;
+  }
+  input[type="radio"]:checked + label:before {
+    background: #000000;
+    border: 1px solid #000000;
+  }  
+}
+
+.preform-cont .efstudent{
+  padding:27px 0 21px;
+  position:relative;
+  &:before{
+    content:"";
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:35px;
+    height:1px;
+    background:#000;
+  }
+  a{
+    display:block;
+    transition-duration: none;
+    text-align:center;
+    background:#ec008c;
+    text-transform: uppercase;
+    color:#ffffff;
+    font-size:12px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:14px 0;
+    cursor:pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-bottom: 12px;
+    &:visited { 
+      background:#a2988a;
+    }
+    &:hover, &:focus { 
+      background:#d4007f;
+    }
+    &:active, .current {
+      background:#000000;
+    }
+  } 
+  h2{
+    color:#000000;
+    font-size:14px;
+    font-weight: normal;
+    text-transform: none;
+    line-height: 1.42;
+  }
+}
+
+.preform-cont .not-efstudent{
+  @extend .efstudent;
+}
+
+.inner{
+  padding-top: 15px;    
+}
+
+.inner .firstPart{
+  .firstname{
+    padding: 12px 0 0;
+    color:#a2988a;
+    label{
+      display: block;
+      padding:0 0 5px;      
+      font-size:14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    input{
+      width:100%;
+      border:1px solid #a2988a;
+      padding: 7px 15px;
+      color:#a2988a;
+      border-radius:3px;
+      &:hover, &:focus{
+        color:#000000;
+        border:1px solid #000000; 
+      }
+    }
+    &:hover, &:focus{
+      color:#000000;
+    }
+  }
+  .lastname{
+    @extend .firstname;
+  }
+  .email{
+    @extend .firstname;
+  }
+  .select {
+    padding: 12px 0 0;
+    color:#a2988a;
+    label{
+      display: block;
+      padding:0 0 5px;      
+      font-size:14px;
+      font-family: Arial, Helvetica, sans-serif;       
+    }
+    .styled-select{       
+      overflow: hidden;
+      background:url(../images/bg-selectbox.jpg) no-repeat right center #ffffff;     
+      position: relative;   
+      select#CountryCode_Countries{
+        background: transparent;
+        width: 100%;
+        padding: 0 0 0 15px;
+        color:#a2988a;  
+        border: 1px solid #a2988a;
+        font-size:13px;
+        -webkit-appearance: none;
+        border-radius: 3px;  
+        line-height: 2;        
+        &:hover, &:focus{
+          color:#000000;
+          border:1px solid #000000; 
+        } 
+      } 
+    }
+    &:hover, &:focus{
+      color:#000;
+    }
+  } 
+  .homephone{
+    @extend .firstname;
+  }   
+  .styled-select.n3{
+    width:80px;
+    float: left;
+    margin-right: 3px;
+    &.year{
+      margin-right: 0; 
+    } 
+    select{
+      background: transparent;
+      width: 100%;
+      float: left;
+      padding: 0 0 0 3px;
+      color:#a2988a;  
+      line-height: 2; 
+      margin-right: 7px; 
+      border: 1px solid #a2988a;
+      -webkit-appearance: none;
+      border-radius: 3px;  
+      &:hover, &:focus{
+        color:#000000;
+        border:1px solid #000000; 
+      } 
+    }
+  } 
+}
+
+
+.inner .secondPart{    
+  .addressline1{
+    padding: 12px 0 0;
+    color:#a2988a;
+    label{
+      display: block;
+      padding:0 0 5px;      
+      font-size:14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    input{
+      width:100%;
+      border:1px solid #a2988a;
+      padding: 7px 15px;
+      color:#a2988a;
+      border-radius:3px;
+      &:hover, &:focus{
+        color:#000000;
+        border:1px solid #000000; 
+      }
+    }
+    &:hover, &:focus{
+      color:#000000;
+    }
+  }
+  .postalcode{
+     @extend .addressline1;
+  }
+  .city{
+     @extend .addressline1;
+  }
+}  
+
+.inner .thirdPart{  
+  padding:12px 0 0;
+  input[type="checkbox"] {
+      background:#000;
+  }   
+}
+
+
+.select.efstudent{
+  padding: 12px 0 0;
+  color:#a2988a;
+  label{
+    display: block;
+    padding:0 0 5px;      
+    font-size:14px;
+    font-family: Arial, Helvetica, sans-serif;       
+  }
+  .styled-select{       
+    overflow: hidden;
+    background:url(../images/bg-selectbox.jpg) no-repeat right center #ffffff;     
+    position: relative;   
+    select#EFDestinations{
+      background: transparent;
+      width: 100%;
+      padding: 0 0 0 15px;
+      color:#a2988a;  
+      border: 1px solid #a2988a;
+      font-size:13px;
+      -webkit-appearance: none;
+      border-radius: 3px;  
+      line-height: 2;        
+      &:hover, &:focus{
+        color:#000000;
+        border:1px solid #000000; 
+      } 
+    } 
+  }
+  &:hover, &:focus{
+    color:#000;
+  }
+}
+
+
+.gender-cont{
+  padding:22px 0 18px;   
+  .radio-gender-title{
+    color:#a2988a;
+    font-size: 14px;
+    padding:0 0 6px;
+  }
+  .gender-count-notef{
+    display: block;
+    float: left;
+    margin-right: 15px; 
+  }
+  input[type="radio"] {
+   position:absolute;
+   opacity: 0;
+   -moz-opacity: 0;
+   -webkit-opacity: 0;
+   -o-opacity: 0;
+  }
+  input[type="radio"] + label {
+     position:relative;
+     padding: 0 0 0 31px;
+     font-size: 14px;
+     line-height:30px;
+     color:#000;
+     font-family: Arial, Helvetica, sans-serif;
+     
+  }
+  input[type="radio"] + label:before {
+     content:"";
+     display:block;
+     position:absolute;
+     top:-4px;
+     height: 20px;
+     width: 20px;
+     background: white;
+     border: 1px solid #a2988a;
+     box-shadow: inset 0px 0px 0px 4px white;     
+     border-radius: 50%;
+     
+  }
+  input[type="radio"]:checked + label{
+    &:hover{
+       color:#000;
+     }
+  }
+  input[type="radio"]:checked + label:before {
+    background: #000000;
+    border: 1px solid #000000;
+    color:#000;
+  }
+}
+
+.row .submit{
+  display:block;
+  text-align:center;
+  background:#ec008c;
+  text-transform: uppercase;
+  color:#ffffff;
+  width:100%;
+  font-size:12px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding:14px 0;
+  cursor:pointer;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin-bottom: 12px;
+  border:0;
+  &:visited { 
+    background:#a2988a;
+  }
+  &:hover, &:focus { 
+    background:#d4007f;
+  }
+  &:active, .current {
+    background:#000000;
+  }
+}
+
+.thank-you-notef{
+  h1{
+    color:#000000;
+    font-size: 22px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin:0;
+    text-transform: uppercase; 
+    font-style: normal;
+    padding: 0 0 25px;
+    line-height: 1; 
+    position:relative;
+    &:before{
+      content:"";
+      position: absolute;
+      bottom:0;
+      left:0;
+      width:35px;
+      height:1px;
+      background:#000;
+    }
+  }
+  p{
+    color:#000000;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.42; 
+    a{
+      color:#000000;
+      &:hover, &:focus{
+        color:#000;
+        text-decoration: none;
+      }
+    } 
+  }
+}
+
+.thank-you-ef{
+  @extend .thank-you-notef;
+}
+

@@ -1,0 +1,33 @@
+/*
+Theme Name: bgsit
+Layout: Content-Sidebar
+*/
+
+.content-area {
+	@include breakpoint(min-width 760px) {
+		float: left;
+		width: 100%;
+		margin-left: -380px;
+		padding-left: 380px;
+	}
+}
+.site-main {
+	background: #b2b2b2;
+	padding: 4rem;
+}
+.site-content .widget-area {
+	float: right;
+	padding: 4rem;
+	background: #fff;
+	width: 380px;
+	@include breakpoint(max-width 760px) {
+		float: none;
+		width: auto;
+		margin: 1em auto 0;
+		max-width: 760px;
+	}
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
